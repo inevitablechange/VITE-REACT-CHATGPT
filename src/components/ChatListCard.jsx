@@ -1,9 +1,17 @@
 const ChatlistCard = ({ question, answer }) => {
   return (
-    <li className="bg-pink-50 p-4 rounded-md text-lg shadow-md shadow-pink-50">
-      <div className="mb-2 font-semibold">Q. {question}</div>
-      <div>A. {answer}</div>
-    </li>
+    <>
+      <li className="flex justify-end mt-6">
+        <div className="bg-indigo-300 p-4 rounded-md text-lg shadow-md max-w-xs">
+          {question}
+        </div>
+      </li>
+      <li className="flex justify-start mt-2">
+        <div className="bg-gray-200 p-4 rounded-md text-lg shadow-md max-w-xs">
+          {answer}
+        </div>
+      </li>
+    </>
   );
 };
 

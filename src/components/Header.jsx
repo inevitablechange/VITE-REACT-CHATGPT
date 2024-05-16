@@ -1,23 +1,26 @@
 import { Link, useLocation } from "react-router-dom";
+import React from "react";
 
 const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="px-2 py-4 flex justify-center gap-8 shadow-md">
+    <header className="flex justify-center items-center gap-8 py-5 shadow-md min-h-[6vh]">
       <Link
-        className={`link-style ${location.pathname === "/" && "text-gray-900"}`}
         to="/"
+        className={`text-indigo-400 ${
+          location.pathname == "/" && "text-indigo-900 font-bold"
+        }`}
       >
-        질문하기
+        코인GPT와 대화하기
       </Link>
       <Link
-        className={`link-style ${
-          location.pathname === "/chat-list" && "text-gray-900"
-        }`}
         to="/chat-list"
+        className={`text-indigo-400 ${
+          location.pathname == "/chat-list" && "text-indigo-900 font-bold"
+        }`}
       >
-        내 질문리스트
+        대화 기록
       </Link>
     </header>
   );

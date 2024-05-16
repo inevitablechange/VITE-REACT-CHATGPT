@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
-import ChatlistCard from "../components/ChatListCard";
+import ChatlistCard from "../components/ChatlistCard";
 
-const ChatList = () => {
-  const [chatlist, setChatlist] = useState([]);
-
-  useEffect(() => {
-    const savedChatlist = localStorage.getItem("savedChatlist");
-
-    if (!savedChatlist) return;
-
-    setChatlist(JSON.parse(savedChatlist));
-  }, []);
+const Chatlist = () => {
+  let savedChatlist = localStorage.getItem("savedChatlist");
+  savedChatlist = JSON.parse(savedChatlist);
 
   return (
-    <div className="flex flex-col justify-center mt-8">
-      <ul className="mt-8 px-4">
-        {chatlist.map((v, i) => (
-          <ChatlistCard key={i} question={v.question} answer={v.answer} />
-        ))}
-      </ul>
-    </div>
+    <ul className="mt-8 px-4">
+      {savedChatlist.map((v, i) => (
+        <ChatlistCard key={i} question={v.question} answer={v.answer} />
+      ))}
+    </ul>
   );
 };
 
-export default ChatList;
+export default Chatlist;
