@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import ChatList from "./pages/ChatList";
+import Home from "./pages/home";
+import Chatlist from "./pages/chatlist";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="max-w-screen-md mx-auto min-h-screen shadow-md">
+      <div className="min-h-screen max-w-screen-md mx-auto bg-indigo-100 flex flex-col">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/chat-list" element={<ChatList />} />
+            <Route path="/chat-list" element={<Chatlist />} />
           </Route>
         </Routes>
       </div>
